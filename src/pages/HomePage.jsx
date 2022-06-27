@@ -6,17 +6,20 @@ import { Controls } from "../components/Controls";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import {
-  selectAllCountries,
   selectCountriesInfo,
+  selectVisibleCountries,
 } from "../store/countries/countries-selectors";
 import { loadCountries } from "../store/countries/countries-action";
+import { selectSearch } from "../store/controls/controls-selectors";
 
 export const HomePage = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const countries = useSelector(selectAllCountries);
-  console.log(countries);
+  const search = useSelector(selectSearch);
+  const countries = useSelector((state) =>
+    selectVisibleCountries(state, { search })
+  );
   const { status, error, qty } = useSelector(selectCountriesInfo);
 
   useEffect(() => {
