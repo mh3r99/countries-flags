@@ -1,7 +1,9 @@
-import { themeReducer } from "./theme/theme-reducer";
+import { combineReducers } from "redux";
 
-const { combineReducers } = require("redux");
+import { themeReducer } from "./theme/theme-reducer";
+import { countriesReducer } from "./countries/countries-reducer";
 
 export const rootReducer = combineReducers({
   theme: themeReducer,
+  countries: countriesReducer,
 });
