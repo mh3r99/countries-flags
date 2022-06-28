@@ -5,7 +5,10 @@ import { Button } from "../components/Button";
 import { Info } from "../components/Info";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDetails } from "../store/details/details-selectors";
-import { loadCountryByName } from "../store/details/details-actions";
+import {
+  clearDetails,
+  loadCountryByName,
+} from "../store/details/details-actions";
 import { useEffect } from "react";
 
 export const Details = () => {
@@ -17,6 +20,10 @@ export const Details = () => {
 
   useEffect(() => {
     dispatch(loadCountryByName(name));
+
+    return () => {
+      dispatch(clearDetails());
+    };
   }, [name, dispatch]);
 
   return (
