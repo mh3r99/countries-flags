@@ -18,10 +18,6 @@ const setCountry = (country) => ({
   payload: country,
 });
 
-export const clearDetails = () => ({
-  type: CLEAR_DETAILS,
-});
-
 const setNeighbors = (countries) => ({
   type: SET_NEIGHBORS,
   payload: countries,
