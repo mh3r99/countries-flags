@@ -1,5 +1,4 @@
 {
-  "homepage": "http://mh3r99.github.io/countries-flags",
   "name": "countries-flags",
   "version": "0.1.0",
   "private": true,
@@ -41,8 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^4.0.0"
   }
 }
